@@ -1,0 +1,135 @@
+﻿body {
+    line-height: 1.6;
+    font-family: "Helvetica Neue","Hiragino Sans GB","Microsoft YaHei","\9ED1\4F53",Arial,sans-serif;
+    color: #222;
+    font-size: 14px;
+}
+
+.head_box {
+    position: relative;
+    background-color: #fff;
+    border-top: 4px solid #44b549;
+    border-bottom: 1px solid #d9dadc;
+}
+
+div {
+    display: block;
+}
+.head .inner.wrp {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.head .inner {
+    height: 60px;
+}
+h1 {
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+}
+.inner {
+    position: relative;
+}
+.logo {
+    float: left;
+    padding-top: 10px;
+    font-size: 24px;
+}
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dd, fieldset, textarea {
+    margin: 0;
+}
+.account {
+    float: right;
+    padding-top: 10px;
+}
+.logo a {
+    display: block;
+    width: 248px;
+    height: 40px;
+    overflow: hidden;
+    text-decoration: none;
+}
+a {
+    color: #459ae9;
+    text-decoration: none;
+}
+
+.account_info {
+    position: relative;
+    min-width: 80px;
+}
+.account_meta {
+    font-size: 14px;
+}
+.account_meta {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.account_info .nickname {
+    display: inline-block;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 18px;
+}
+.account_meta_primary a {
+    color: #222;
+}
+.account_info .type_wrp {
+    position: absolute;
+    top: 2px;
+    left: 0;
+}
+.account_inbox {
+    position: relative;
+    z-index: 1;
+    top: 3px;
+    margin-left: 5px;
+}
+
+.logo a:before {
+    display: inline-block;
+    content:url(../Images/bg/bg_logo.png)
+}
+.head .inner.wrp {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.icon_subscribe_label {
+    background: url("../Images/base/layout_head_z26f6ea.png") 0 0 no-repeat;
+    width: 38px;
+    height: 14px;
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 100px;
+    overflow: hidden;
+}
+.icon_verify_label.fail {
+    background: url("../Images/base/layout_head_z26f6ea.png") 0 -48px no-repeat;
+}
+.icon_inbox {
+    background: url("../Images/base/layout_head_z26f6ea.png") 0 -96px no-repeat;
+    width: 20px;
+    height: 15px;
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 100px;
+    overflow: hidden;
+}
+
+.container_box.cell_layout {
+}
+.container_box {
+    border: 1px solid #d9dadc;
+    background-color: #fff;
+}
+.container_box {
+    min-height: 700px;
+}
+/*.account {
+    font-size: 0;
+}*/
+
+

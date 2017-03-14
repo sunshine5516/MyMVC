@@ -1,0 +1,14 @@
+F:\Code\WXPageConfig\WXPageModel\obj\Release\WXPageModel.csprojResolveAssemblyReference.cache
+F:\Code\WXPageConfig\WXPageModel\bin\Release\WXPageModel.dll
+F:\Code\WXPageConfig\WXPageModel\bin\Release\WXPageModel.pdb
+F:\Code\WXPageConfig\WXPageModel\obj\Release\WXPageModel.dll
+F:\Code\WXPageConfig\WXPageModel\obj\Release\WXPageModel.pdb
+F:\Code\WXPageConfig\WXPageModel\bin\Release\WXPageModel.dll.config
+F:\Code\WXPageConfig\WXPageModel\bin\Release\EntityFramework.dll
+F:\Code\WXPageConfig\WXPageModel\bin\Release\EntityFramework.SqlServer.dll
+F:\Code\WXPageConfig\WXPageModel\bin\Release\EntityFramework.xml
+F:\Code\WXPageConfig\WXPageModel\bin\Release\EntityFramework.SqlServer.xml
+F:\Code\WXPageConfig\WXPageModel\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\Code\WXPageConfig\WXPageModel\bin\Release\Microsoft.AspNet.Identity.Core.dll
+F:\Code\WXPageConfig\WXPageModel\obj\Release\WXPageModel.Migrations.InitialCreate.resources
+F:\Code\WXPageConfig\WXPageModel\obj\Release\WXPageModel.csproj.GenerateResource.Cache

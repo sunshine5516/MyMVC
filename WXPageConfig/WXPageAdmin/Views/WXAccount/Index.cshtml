@@ -1,0 +1,68 @@
+﻿@model string
+@*@model IEnumerable<WXPageDomain.Models.WXAccountInfo>*@
+@using PagedList
+
+@{
+    Layout = null;
+}
+@{
+    AjaxOptions ajaxOpts = new AjaxOptions
+    {
+        UpdateTargetId = "tableBody",
+        Url = Url.Action("GetAccountList"),
+        LoadingElementId = "loading",
+        LoadingElementDuration = 100,
+        //Confirm = "Do you wish to request new data"
+    };
+}
+<div class="container clearfix">
+    @Html.Partial("../Shared/_MainNavTab")
+    <div class="main-wrap container content">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class=""></i>@Html.ActionLink("首页", "Index", "WXAccount")<span class="crumb-step">&gt;</span><span class="crumb-name">账号管理</span></div>
+        </div>
+        <div class="search-wrap">
+            <div class="search-content">
+                <div id="loading" class="load" style="display:none">
+                    <p>Lodaing Data</p>
+                </div>
+
+                @using (Html.BeginForm(null, null, null, FormMethod.Get, new { accountType = "Name" }))
+            {
+                    <div class="dataTables_filter">
+                        <label>
+                            <span>菜单名：</span>
+                            @Html.TextBox("Name", null, new { @class = "m-wrap small" })
+                        </label>
+                    </div>
+                }
+
+
+                <table class="search-tab">
+                    <tr>
+                        <th width="70">关键字:</th>
+                        @*<td><input class="common-text" placeholder="关键字" name="keywords" value="" id="keyWorld" type="text"></td>*@
+                        <td>
+                            @using (Ajax.BeginForm(ajaxOpts))
+                            {
+                                <div>
+                                    @Html.DropDownList("accountType", new SelectList(
+                                            new[] { "All" }.Concat(Enum.GetNames(typeof(WXPageAdmin.WXEnum.Enums.WXType)))
+                                            ))
+                                    @Html.TextBox("keyWord")
+                                    @*<input class="common-text" placeholder="关键字" name="keywords" value="" id="keyWorld" type="text">*@
+                                    <button type="submit">查询</button>
+                                </div>
+                            }
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="tableBody">
+            @Html.Action("GetAccountList", new { accountType = Model })
+        </div>
+
+    </div>
+</div>

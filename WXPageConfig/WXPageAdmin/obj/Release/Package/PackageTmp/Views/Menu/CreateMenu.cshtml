@@ -1,0 +1,90 @@
+﻿@using WXPageDomain.Models
+@model IList<WXPageModel.SubMenu>
+@{
+    ViewBag.Title = "Address";
+}
+<div class="clearfix">
+    @*@Html.Partial("../Shared/_ConfigNavTab")*@
+    <div class="main-wrap content">
+        <div class="crumb-wrap">
+
+            <div class="main-content">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#home" data-toggle="tab">设置自定义菜单</a></li>
+                    <li><a href="#profile" data-toggle="tab">使用规则</a></li>
+                </ul>
+                <div class="result-wrap">
+                    @using (Html.BeginForm())
+                    {
+                        <div class="">
+                            <div>
+                                <br>
+                                <div id="myTabContent" class="tab-content">
+                                    <div class="tab-pane active in" id="home">
+                                        <div class="tit">
+                                            <ul class="nav nav-tabs">
+                                                <li class="active"><a href="#menu0" data-toggle="tab">菜单一</a></li>
+                                                <li><a href="#menu1" data-toggle="tab">菜单二</a></li>
+                                                <li><a href="#menu2" data-toggle="tab">菜单三</a></li>
+                                            </ul>
+                                            <table class="table table-hover caidan_tab">
+                                                <tr>
+                                                    <th>显示顺序</th>
+                                                    <th>菜单名称</th>
+                                                    <th>触发动作</th>
+                                                    <th>响应动作</th>
+                                                </tr>
+                                            </table>
+                                            <div id="myTabContent" class="tab-content">
+                                                @for (int i = 0; i < Model.Count; i++)
+                                                {
+                                                    var tableid = "menu" + i;
+                                                    <div class="@(i==0?"tab-pane active":"tab-pane")" id=@tableid>
+                                                        @Html.EditorFor(model => Model[i].Name, new { htmlAttributes = new { @class = "form-control" } })
+                                                        <dl class="dl-horizontal">
+                                                            @for (int j = 0; j < Model[i].SingleButtons.Count; j++)
+                                                            {
+                                                                <dt>@Html.EditorFor(model => Model[i].SingleButtons[j].Index)</dt>
+                                                                <dd>
+                                                                    @Html.EditorFor(model => Model[i].SingleButtons[j].Name, new { htmlAttributes = new { @class = "form-control" } })
+                                                                    @Html.DropDownListFor(model => Model[i].SingleButtons[j].Type, new SelectList(ViewBag.from_enum), new { @class = "dropdown-toggle form-control" })
+                                                                    @Html.EditorFor(model => Model[i].SingleButtons[j].Key, new { htmlAttributes = new { @class = "form-control" } })
+                                                                    @*@Html.EditorFor(model => Model[i].SingleButtons[j].Url, new { htmlAttributes = new { @class = "form-control" } })*@
+                                                                </dd>
+                                                            }
+                                                        </dl>
+                                                    </div>
+                                                }
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="profile">
+                                        <label>
+                                            使用说明及规则，请仔细阅读<br />
+                                            （1）使用菜单需要成为“服务号”，或通过认证的“订阅号”，且开启了高级功能。到微信后台【高级功能 > 开发模式】下获取AppId和AppSecret，并且将这2个值填写在微信帐号相应位置。<br />
+                                            （2）一级菜单按钮个数为1-3个<br />
+                                            （3）如果设置了二级菜单按钮个数为1-5个<br />
+                                            （4）按钮描述，既按钮名字，不超过16个字节，子菜单不超过40个字节<br />
+                                            （5）如果名称不填，此按钮将被忽略<br />
+                                            （6）如果一级菜单为空，该列所有设置的二级菜单都会被忽略<br />
+                                            （7）“关键词”对应自定义回复管理里的关键词,以及营销工具里每个活动的关键词<br />
+                                            （8）“链接”为跳转到指定的页面。每个菜单“关键词”和“链接”只能填写一项，如果2个都填写，则按照“链接”跳转来设置
+                                            如果要快速看到微信上的菜单最新状态，需要重新关注，否则需要静静等待N小时
+                                            若仍有问题，请点击下面的按钮，更新Access_Token值【注：请慎用】
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="btn-toolbar list-toolbar">
+                                    <button class="btn btn-primary btn-default"><i class="fa fa-save"></i> 保存</button>
+                                    <a href="#myModal" data-toggle="modal" class="btn btn-danger">取消</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

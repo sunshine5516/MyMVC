@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    @*<title>@CachedConfigContext.Current.SettingConfig.WebSiteTitle</title>*@
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <link href="~/Assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    
+    <link href="~/Assets/css/metro.css" rel="stylesheet" />
+    <link href="~/Assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link href="~/Assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Assets/css/style.css" rel="stylesheet" />
+    <link href="~/Assets/css/style_responsive.css" rel="stylesheet" />
+    <link href="~/Assets/css/style_default.css" rel="stylesheet" id="style_color" />
+    <link href="~/Assets/fancybox/source/jquery.fancybox.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="~/Assets/uniform/css/uniform.default.css" />
+    <link rel="stylesheet" type="text/css" href="~/Assets/chosen-bootstrap/chosen/chosen.css" />
+    <link rel="stylesheet" href="~/Assets/data-tables/DT_bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="~/Assets/uniform/css/uniform.default.css" />
+    <link rel="stylesheet" type="text/css" href="~/Assets/jquery-ui/jquery-ui-1.10.1.custom.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/content/styles/admin.main.css" />
+    <link rel="stylesheet" type="text/css" href="~/content/styles/jquery.thickbox.css" />
+    
+
+
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.css">
+    @*<link rel="stylesheet" type="text/css" href="~/Content/bootstrap.min.css">*@
+     <!--ajax请求-->
+    <script src="~/scripts/jquery-1.10.2.js" type="text/javascript"></script>
+    <script src="~/scripts/jquery.unobtrusive-ajax.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="~/Content/fonts/font-awesome.css">
+     <!--图片上传-->
+    <link href="~/Content/fileinput.css" media="all" rel="stylesheet" type="text/css">
+    @*<script src="~/scripts/jquery-1.10.2.min.js" type="text/javascript"></script>*@
+
+    <!--图片上传-->
+    <script src="~/scripts/fileinput.js" type="text/javascript"></script>
+    <script src="~/scripts/fileinput_locale_zh.js" type="text/javascript"></script>
+    @RenderSection("PageSpecificStyleSheetIncludes", required: false)
+
+    @*表情输入*@
+    @*<link href="css/bootstrap.min.css" rel="stylesheet">*@
+    <link href="~/Content/Styles/emoji/cover.css" rel="stylesheet">
+    
+    <link href="~/Content/Styles/emoji/nanoscroller.css" rel="stylesheet">
+    <link href="~/Content/Styles/emoji/emoji.css" rel="stylesheet">
+</head>
+<body class="fixed-top">
+	<!-- BEGIN HEADER -->
+	<div class="header navbar  navbar-fixed-top">
+		<!-- BEGIN TOP NAVIGATION BAR -->
+		@Html.Partial("_Header")
+	</div>
+	<div class="page-container row-fluid">
+		<!-- BEGIN SIDEBAR -->
+		@Html.Partial("_Menu")
+		<!-- END SIDEBAR -->
+		<!-- BEGIN PAGE -->
+		<div class="page-content">
+			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+			<div id="portlet-config" class="modal hide">
+				<div class="modal-header">
+					<button data-dismiss="modal" class="close" type="button"></button>
+					<h3>portlet Settings</h3>
+				</div>
+				<div class="modal-body">
+					<p>Here will be a configuration form</p>
+				</div>
+			</div>	
+			<div class="container-fluid">
+				<div class="row-fluid">
+					<div class="span12" id="navigation">
+						<!-- BEGIN STYLE CUSTOMIZER -->
+						@Html.Partial("_Theme")
+						<!-- END BEGIN STYLE CUSTOMIZER -->  
+						<!-- BEGIN PAGE TITLE & BREADCRUMB-->			
+						<h3 class="page-title">
+							<span>标题</span>　<small>介绍</small>
+						</h3>
+						<ul class="breadcrumb">
+                            <li>
+                                <i class="icon-home"></i>
+                                @*<span>首页</span>*@
+                            @Html.ActionLink("首页", "Index", "WXAccount")
+								<i class="icon-angle-right"></i>
+							</li>
+							<li>
+								<span>菜单组</span>
+								<i class="icon-angle-right"></i>
+							</li>
+							<li><span>菜单</span></li>
+						</ul>
+						<!-- END PAGE TITLE & BREADCRUMB-->
+					</div>
+				</div>	
+                @*@Scripts.Render("~/bundles/jquery")
+                @Scripts.Render("~/bundles/bootstrap")*@
+                @RenderBody()
+			</div>
+		</div>
+	</div>
+	<!-- END CONTAINER -->
+	<!-- BEGIN FOOTER -->
+	@Html.Partial("_Footer")
+	<!-- END FOOTER -->
+	<!-- BEGIN JAVASCRIPTS -->
+    @*<script type="text/javascript">
+        var staticFileRoot = "@Url.StaticFile()";
+	</script>*@
+	<!-- Load javascripts at bottom, this will reduce page load time -->
+	<script src="~/Assets/js/jquery-1.8.3.min.js"></script>	
+	<script src="~/Assets/breakpoints/breakpoints.js"></script>	
+	<script src="~/Assets/bootstrap/js/bootstrap.min.js"></script>	
+	<script src="~/Assets/js/jquery.blockui.js"></script>
+	<script src="~/Assets/js/jquery.cookie.js"></script>
+	<!-- ie8 fixes -->
+	<!--[if lt IE 9]>
+	
+	<![endif]-->	
+	<script type="text/javascript" src="~/Assets/uniform/jquery.uniform.min.js"></script>
+	<script type="text/javascript" src="~/Assets/data-tables/jquery.dataTables.js"></script>
+	<script type="text/javascript" src="~/Assets/data-tables/DT_bootstrap.js"></script>
+    @*<script type="text/javascript" src="@Url.StaticFile("/Assets/js/jquery.pulsate.min.js")"></script>	*@
+    <script type="text/javascript" src="~/assets/js/app.js"></script>	
+    <script type="text/javascript" src="~/Content/Scripts/jquery.thickbox.js"></script>
+    <script type="text/javascript" src="~/content/scripts/jquery.numeric.js"></script>
+    <script type="text/javascript" src="~/content/scripts/jquery.ui.datapicker-zh-CN.js"></script>
+    <script type="text/javascript" src="~/content/scripts/admin.main.js"></script>
+	<script type="text/javascript">
+	    jQuery(document).ready(function () {
+	        // initiate layout and plugins
+	        App.init();
+	    });
+	</script>
+    @RenderSection("PageSpecificJavascriptIncludes", required: false)
+
+
+
+
+    
+    @*<script>window.jQuery || document.write('<script src="js/jquery-2.1.1.min.js"><\/script>')</script>*@
+
+    <!-- 表情输入 -->
+    <script src="~/Content/Scripts/emoji/nanoscroller.min.js"></script>
+    <script src="~/Content/Scripts/emoji/tether.min.js"></script>
+    <script src="~/Content/Scripts/emoji/config.js"></script>
+    <script src="~/Content/Scripts/emoji/util.js"></script>
+    <script src="~/Content/Scripts/emoji/jquery.emojiarea.js"></script>
+    <script src="~/Content/Scripts/emoji/emoji-picker.js"></script>
+    <!-- End emoji-picker JavaScript -->
+    @*<script>
+    $(function() {
+      window.emojiPicker = new EmojiPicker({
+        emojiable_selector: '[data_emojiable=true]',
+        assetsPath: '~Content/Images/emoji',
+        popupButtonClasses: 'fa fa-smile-o'
+      });
+      window.emojiPicker.discover();
+    });
+    </script>*@
+
+
+
+</body>
+</html>

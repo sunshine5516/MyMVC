@@ -1,0 +1,67 @@
+﻿
+@model WXPageDomain.Models.ReplayContents
+<style>
+    [class*=" icon-"] {
+        font-family: FontAwesome;
+        font-weight: normal;
+        font-style: normal;
+        text-decoration: inherit;
+        display: inline;
+        width: auto;
+        height: auto;
+        line-height: normal;
+        vertical-align: baseline;
+        background-image: none !important;
+        background-position: 0% 0%;
+        background-repeat: repeat;
+    }
+</style>
+<ul class="nav nav-tabs">
+
+    <li class="@(Model.ReplyType=="文字"?"active":string.Empty)"><a href="#home" data-toggle="tab">文字</a></li>
+    <li class="@(Model.ReplyType=="图片"?"active":string.Empty)"><a href="#profile" data-toggle="tab">图片</a></li>
+
+</ul>
+@using (Html.BeginForm("DefaultResponse", "Message", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+    <div>
+        <div class="col-md-4">
+            <br>
+            <div id="myTabContent" class="tab-content">
+                <div class="@(Model.ReplyType == "文字" ? "tab-pane active in" : "tab-pane fade")" id="home">
+                    <form id="tab">
+
+                        <div class="form-group">
+                            <label>请输入文本</label>
+                            <div class="cover-container">
+                                <div class="inner cover">
+                                    <p class="lead emoji-picker-container">
+                                        <textarea class="textarea-control" rows="3" name="ReplayContent" id="ReplayContent" placeholder=@Model.ReplayContent data_emojiable="true"></textarea>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="@(Model.ReplyType == "图片" ? "tab-pane active in" : "tab-pane fade")" id="profile">
+                    <div>当前图片：</div><img src="@Model.ImageUrl" alt="" />
+                    @Html.TextBoxFor(model => model.ImageUrl, new { type = "file", @class = "file" })
+                </div>
+            </div>
+            <div class="btn-toolbar list-toolbar">
+                <button class="btn btn-primary btn-default"><i class="fa fa-save"></i> 保存</button>
+                <a href="#myModal" data-toggle="modal" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+}
+<script>
+    $(function () {
+        window.emojiPicker = new EmojiPicker({
+            emojiable_selector: '[data_emojiable=true]',
+            assetsPath: '../../Content/Images/emoji',
+            popupButtonClasses: 'fa fa-smile-o'
+        });
+        window.emojiPicker.discover();
+    });
+</script>

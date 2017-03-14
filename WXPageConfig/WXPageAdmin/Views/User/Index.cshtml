@@ -1,0 +1,89 @@
+﻿@model IEnumerable<WXPageAdmin.Models.User>
+<div class="container clearfix">
+    @Html.Partial("../Shared/_Vavigation")
+    <div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class=""></i><a href="index.html">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">账号管理</span></div>
+        </div>
+        <div class="search-wrap">
+            <div class="search-content">
+                <form action="#" method="post">
+                    <table class="search-tab">
+                        <tr>
+                            <th width="120">选择分类:</th>
+                            <td>
+                                <select name="search-sort" id="">
+                                    <option value="class00">全部</option>
+                                    <option value="class01">订阅号</option>
+                                    <option value="class02">公众号</option>
+                                    <option value="class03">企业号</option>
+                                    
+                                </select>
+                            </td>
+                            <th width="70">关键字:</th>
+                            <td><input class="common-text" placeholder="关键字" name="keywords" value="" id="" type="text"></td>
+                            <td><input class="btn btn-primary btn2" name="sub" value="查询" type="submit"></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <div class="result-wrap">
+            <div class="result-title">
+                <div class="result-list">
+                    <a href="~/User/Add"><i class="icon-font"></i>添加账号</a>
+                    @*<a id="batchDel" href="javascript:void(0)"><i class="icon-font"></i>批量删除</a>
+                    <a id="updateOrd" href="javascript:void(0)"><i class="icon-font"></i>更新排序</a>*@
+                </div>
+            </div>
+            <div class="result-content">
+                <table class="result-tab" width="100%">
+                    <tr>
+                        <th class="tc" width="5%">
+                            
+                        </th>
+                        <th>公众账号</th>
+                        <th>微信号</th>
+                        <th>类型</th>
+                        <th>插入时间</th>
+                        <th>到期时间</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="tc"><input name="id[]" value="" type="checkbox"></td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.UserName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.WXAccount)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.WXType)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.InsertTime)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EndTime)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.State )
+                            </td>
+                            <td>
+                                @Html.ActionLink("编辑", "Edit", new { id = item.Id }) |
+                                @Html.ActionLink("详情", "Details", new { id = item.Id }) |
+                                @*@Html.ActionLink("删除", "Delete", new { id = item.Id })|*@
+                                @Html.ActionLink("权限", "Delete", new { id = item.Id })
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+
+        </div>
+    </div>

@@ -1,0 +1,16 @@
+F:\Code\WXPageConfig\WXPageModel\bin\Debug\WXPageModel.dll.config
+F:\Code\WXPageConfig\WXPageModel\bin\Debug\WXPageModel.dll
+F:\Code\WXPageConfig\WXPageModel\bin\Debug\WXPageModel.pdb
+F:\Code\WXPageConfig\WXPageModel\bin\Debug\EntityFramework.dll
+F:\Code\WXPageConfig\WXPageModel\bin\Debug\EntityFramework.SqlServer.dll
+F:\Code\WXPageConfig\WXPageModel\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\Code\WXPageConfig\WXPageModel\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+F:\Code\WXPageConfig\WXPageModel\bin\Debug\EntityFramework.xml
+F:\Code\WXPageConfig\WXPageModel\bin\Debug\EntityFramework.SqlServer.xml
+F:\Code\WXPageConfig\WXPageModel\obj\Debug\WXPageModel.csprojResolveAssemblyReference.cache
+F:\Code\WXPageConfig\WXPageModel\obj\Debug\WXPageModel.dll
+F:\Code\WXPageConfig\WXPageModel\obj\Debug\WXPageModel.pdb
+F:\Code\WXPageConfig\WXPageModel\obj\Debug\WXPageModel.Migrations.InitialCreate.resources
+F:\Code\WXPageConfig\WXPageModel\obj\Debug\WXPageModel.csproj.GenerateResource.Cache
+F:\Code\WXPageConfig\WXPageModel\bin\Debug\zh-Hans\EntityFramework.resources.dll
+F:\Code\WXPageConfig\WXPageModel\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll

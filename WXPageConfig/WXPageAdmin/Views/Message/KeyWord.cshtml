@@ -1,0 +1,42 @@
+﻿
+@model WXPageDomain.Models.ReplayContents
+<div class="result-wrap">
+    @using (Html.BeginForm("KeyWord", "Message", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="col-md-4">
+            <br>
+            <div id="myTabContent" class="tab-content">
+                <div class="tab-pane active in" id="home">
+                    <form id="tab">
+                        <div class="form-group">
+                            <label>请输入关键字</label>
+                            @Html.EditorFor(model => model.KeyName, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                        <div>@Html.Label("option1", "关键词类型")</div>
+                        @*@Html.EditorFor(model => model.replayType)*@
+                        <div class="btn-group form-group">
+
+                            <label class="btn btn-primary">
+
+                                @Html.RadioButtonFor(model => model.ReplyType, "完全匹配", true)完全匹配
+                            </label>
+                            <label class="btn btn-primary">
+                                @Html.RadioButtonFor(model => model.ReplyType, 2)  包含匹配
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>请输入回复内容</label>
+                            @Html.TextAreaFor(model => model.ReplayContent, new { @class = "form-control" })
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="btn-toolbar list-toolbar">
+                <button class="btn btn-primary btn-default"><i class="fa fa-save"></i> 保存</button>
+                <a href="#myModal" data-toggle="modal" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    }
+</div>
+

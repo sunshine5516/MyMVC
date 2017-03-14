@@ -1,0 +1,64 @@
+﻿@{
+    WXPageBLL.Concrete.WXAdminMenuBLL bll = new WXPageBLL.Concrete.WXAdminMenuBLL();
+    var adminMenuConfig = bll.ConfigMenu();
+    //var permissions = AdminUserContext.Current.LoginInfo.BusinessPermissionList.Select(p => p.ToString());
+}
+<div class="page-sidebar nav-collapse collapse">
+    <!-- BEGIN SIDEBAR MENU -->
+    <ul>
+        <li>
+            <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+            <div class="sidebar-toggler hidden-phone"><h3 style="margin-left:-160px; line-height:23px;  color:#666; ">GMS功能菜单</h3></div>
+            <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+        </li>
+        <li>
+            <!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
+            <form class="sidebar-search dn">
+                <div class="input-box">
+                    <a href="javascript:;" class="remove"></a>
+                    <input type="text" placeholder="Search..." />
+                    <input type="button" class="submit" value=" " />
+                </div>
+            </form>
+            <!-- END RESPONSIVE QUICK SEARCH FORM -->
+        </li>
+        @foreach (var group in adminMenuConfig.AdminMenuGroups)
+        {
+            if (!string.IsNullOrEmpty(group.Permission))
+            {
+                continue;
+            }
+
+            var menus = group.AdminMenuArray.Where(m => string.IsNullOrEmpty(m.Permission));
+            var hasSub = menus.Count() > 0;
+
+            if (!hasSub && string.IsNullOrEmpty(group.Url))
+            {
+                continue;
+            }
+
+            <li class="@(hasSub?"has-sub":string.Empty)">
+                <a href="@(hasSub ? "javascript:;" : group.Url)" title="@group.Info">
+                    <i class="@group.Icon"></i>
+                    <span class="title">@group.Name</span>
+                    @if (hasSub)
+                {
+                        <span class='arrow'></span>
+                    }
+                </a>
+                @if (hasSub)
+                {
+                    <ul class="sub">
+                        @foreach (var menu in menus)
+                    {
+                            @*<li><a href="@menu.Url" title="@menu.Info">@menu.Name</a></li>*@
+                            @Html.ActionLink(@menu.Info, "FirstResponse", "Message", new { id = 2}, "")
+                        }
+                    </ul>
+                }
+            </li>
+        }
+    </ul>
+    <!-- END SIDEBAR MENU -->
+</div>
+

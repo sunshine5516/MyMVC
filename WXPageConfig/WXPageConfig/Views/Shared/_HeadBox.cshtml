@@ -1,0 +1,44 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - WXconfig</title>
+    <link href="@Url.Content("~/Content/Home.css")" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="head" id="header">
+        <div class="head_box">
+            <div class="inner wrp">
+                <h1 class="logo"><a href="/" title="微信公众平台"></a></h1>
+                <div class="account">
+                    <div class="account_meta account_info account_meta_primary">
+                        <a href="/cgi-bin/settingpage?t=setting/index&amp;action=index&amp;token=1365826718&amp;lang=zh_CN" class="nickname">新注册公众号</a>
+                        <span class="type_wrp">
+                            <a href="/cgi-bin/settingpage?t=setting/index&amp;action=index&amp;token=1365826718&amp;lang=zh_CN" class="type icon_subscribe_label">订阅号</a>
+
+                            <a href="/merchant/store?action=detail&amp;t=wxverify/detail&amp;info=verify&amp;lang=zh_CN&amp;token=1365826718" class="type icon_verify_label fail">未认证</a>
+
+                        </span>
+                        <a href="/cgi-bin/settingpage?t=setting/index&amp;action=index&amp;token=1365826718&amp;lang=zh_CN"><img src="/misc/getheadimg?fakeid=3204387010&amp;token=1365826718&amp;lang=zh_CN" class="avatar"></a>
+                    </div>
+                    <div id="accountArea" class="account_meta account_inbox account_meta_primary">
+                        <a href="/cgi-bin/frame?t=notification/index_frame&amp;lang=zh_CN&amp;token=1365826718" class="account_inbox_switch">
+                            <i class="icon_inbox">通知</i>&nbsp;
+                        </a>
+                    </div>
+                    <div class="account_meta account_logout account_meta_primary"><a id="logout" href="/cgi-bin/logout?t=wxm-logout&amp;lang=zh_CN&amp;token=1365826718">退出</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="body" class="body page_index">
+
+        <div id="js_container_box" class="container_box cell_layout side_l">
+
+        </div>
+    </div>
+</body>
+</html>
